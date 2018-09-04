@@ -94,7 +94,8 @@ data class Employee(
 When we declare many types in our supertype list, it may appear that we inherit more than one implementation of the same method. For example
 
 <div class="sample" markdown="1" theme="idea" data-highlight-only>
-``` kotlin
+```
+kotlin
 interface A {
     fun foo() { print("A") }
     fun bar()
@@ -103,6 +104,11 @@ interface A {
 interface B {
     fun foo() { print("B") }
     fun bar() { print("bar") }
+}
+
+interface C {
+    fun foo() { print("C") }
+    fun bar() { print("bar C") }
 }
 
 class C : A {
@@ -119,6 +125,7 @@ class D : A, B {
         super<B>.bar()
     }
 }
+
 ```
 </div>
 
